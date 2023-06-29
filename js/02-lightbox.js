@@ -5,8 +5,8 @@ const galleryAdd = galleryItems
   .map(
     ({ preview, original, description }) =>
       `<li class="gallery__item">
-   <a class="gallery__link" href="${original}">
-      <img class="gallery__image" src="${preview}" alt="${description}" />
+   <a class="gallery__link" href="${preview}">
+      <img class="gallery__image" src="${original}" alt="${description}" />
    </a></li>`
   )
   .join("");
@@ -17,4 +17,5 @@ var lightbox = new SimpleLightbox(".gallery a", {
   captionsData: "alt",
 });
 console.log(galleryItems);
+
 

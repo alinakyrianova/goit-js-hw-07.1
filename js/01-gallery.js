@@ -4,9 +4,9 @@ import { galleryItems } from './gallery-items.js';
 const galleryEl = document.querySelector('.gallery');
 const galleryAdd = galleryItems
   .map(
-    ({ preview, original, description }) =>
-      `<li class="gallery__item"><a class="gallery__link" href="${original}">
-        <img class="gallery__image" src="${preview}" alt="${description}" />
+    ({ original, preview, description }) =>
+      `<li class="gallery__item"><a class="gallery__link" href="${preview}">
+        <img class="gallery__image" src="${original}" alt="${description}" />
       </a></li>`
   )
   .join('');
@@ -23,9 +23,9 @@ function onGalleryClick(event) {
   }
 }
 
-function openModal(imageUrl) {
+function openModal(preview) {
   const instance = basicLightbox.create(`
-    <img src="${imageUrl}" alt="" />
+    <img src="${preview}" alt="" />
   `);
   instance.show();
 
